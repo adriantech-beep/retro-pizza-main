@@ -1,5 +1,5 @@
 import Loader from "../ui/Loader";
-import NavBar from "../ui/Navbar";
+import NavBar from "../ui/NavigationBar";
 import PizzaCard from "./PizzaCard";
 import { useProducts } from "./useProducts";
 

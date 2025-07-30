@@ -8,7 +8,7 @@ const navLinks = [
   { name: "Cart", path: "/cart" },
 ];
 
-const NavBar = () => {
+const NavigationBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -65,4 +65,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavigationBar;

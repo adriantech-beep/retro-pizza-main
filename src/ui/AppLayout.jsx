@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "./Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NavigationBar from "./NavigationBar";
 
 const AppLayout = () => {
   return (
     <div>
-      <NavBar />
+      <NavigationBar />
       <main>
         <Outlet />
       </main>
