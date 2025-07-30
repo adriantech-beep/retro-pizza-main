@@ -1,0 +1,12 @@
+| **Name**                 | **Price** | **Description**                                                 | **Category** |
+| ------------------------ | --------: | --------------------------------------------------------------- | ------------ |
+| **Pixel Pepperoni**      |   \$11.99 | Classic pepperoni with melted mozzarella and 8-bit spice        | Pizza        |
+| **Neon Cheese Blast**    |   \$10.49 | Triple cheese overload with cheddar, mozzarella, and neon vibes | Pizza        |
+| **Arcade Supreme**       |   \$13.99 | Loaded with sausage, peppers, olives & retro flavor             | Pizza        |
+| **Mushroom Mania**       |   \$10.99 | Savory mushroom mix with garlic butter drizzle                  | Pizza        |
+| **Turbo Hawaiian**       |   \$12.49 | Ham, pineapple, and a tropical blast from the '80s              | Pizza        |
+| **Power-Up BBQ Chicken** |   \$13.49 | Grilled chicken, tangy BBQ, and XP-boosting onions              | Pizza        |
+| **Insert Coin Calzone**  |    \$9.99 | Folded crust filled with cheese, pepperoni & nostalgia          | Calzone      |
+| **Pac-Meat Lovers**      |   \$14.49 | Sausage, bacon, ham, and pepperoni chasing each other           | Pizza        |
+| **Level-Up Veggie**      |   \$11.49 | Bell peppers, mushrooms, olives, onions & spinach               | Pizza        |
+| **Rocket Fuel Diablo**   |   \$13.99 | Jalapeños, spicy sausage & chipotle sauce for max heat          | Pizza        |
