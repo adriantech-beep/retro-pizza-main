@@ -28,7 +28,7 @@ const ProductListing = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {products.map((pizza) => (
-            <PizzaCard key={pizza._id} {...pizza} id={pizza._id} />
+            <PizzaCard key={pizza.id} {...pizza} id={pizza.id} />
           ))}
         </div>
       </section>
