@@ -4,8 +4,7 @@ const ConfirmOrderModal = ({ quantity, setShowConfirm, onHandleAdd }) => {
       <div className="bg-[#1a1a2e] p-6 rounded-xl text-white border border-[#ff4d00]/30 shadow-lg max-w-sm w-full">
         <h3 className="text-lg font-bold mb-4 text-[#ffe600]">Confirm Order</h3>
         <p className="mb-4">
-          Add <strong>{quantity}</strong> x <strong>{name}</strong> to your
-          cart?
+          Add <strong>{quantity}</strong> x to your cart?
         </p>
         <div className="flex justify-end gap-4">
           <button
