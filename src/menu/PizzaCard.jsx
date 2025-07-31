@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useCartStore } from "../store/useCartStore";
 import ConfirmOrderModal from "./ConfirmOrderModal";
-import AnimatedNumbers from "react-animated-numbers";
+// import AnimatedNumbers from "react-animated-numbers";
 
 const PizzaCard = ({ pizza }) => {
   const { imageUrl, name, description, price, id } = pizza;
@@ -26,7 +26,7 @@ const PizzaCard = ({ pizza }) => {
       <p className="text-sm text-white/80 mb-3">{description}</p>
 
       <div className="flex items-center justify-between mt-4">
-        <div className="container">
+        {/* <div className="container">
           <AnimatedNumbers
             useThousandsSeparator
             transitions={(index) => ({
@@ -39,7 +39,7 @@ const PizzaCard = ({ pizza }) => {
               color: "red",
             }}
           />
-        </div>
+        </div> */}
         <div className="flex items-center gap-2">
           <button
             className="px-2 py-1 text-white bg-gray-700 rounded"
