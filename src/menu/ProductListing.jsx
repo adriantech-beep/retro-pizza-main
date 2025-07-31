@@ -4,12 +4,12 @@ import PizzaCard from "./PizzaCard";
 import { useProducts } from "./useProducts";
 
 const ProductListing = () => {
-  const { products, isLoading } = useProducts();
+  const { products = [], isLoading } = useProducts();
 
   if (isLoading) return <Loader />;
 
   if (products?.length === 0)
-    return <p className="text-center text-gray-400 mt-10">No pizzas found.</p>;
+    return <p className="text-center text-stone-800 mt-10">No pizzas found.</p>;
 
   return (
     <>
