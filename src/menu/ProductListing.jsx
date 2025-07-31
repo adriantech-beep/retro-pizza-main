@@ -1,11 +1,11 @@
 import Loader from "../ui/Loader";
-import NavBar from "../ui/NavigationBar";
 import PizzaCard from "./PizzaCard";
 import { useProducts } from "./useProducts";
 
 const ProductListing = () => {
   const { products = [], isLoading } = useProducts();
 
+  console.log(products);
   if (isLoading) return <Loader />;
 
   if (products?.length === 0)
