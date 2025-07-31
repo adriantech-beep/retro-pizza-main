@@ -3,7 +3,9 @@ import { useCartStore } from "../store/useCartStore";
 import ConfirmOrderModal from "./ConfirmOrderModal";
 import AnimatedNumbers from "react-animated-numbers";
 
-const PizzaCard = ({ imageUrl, name, description, price, id }) => {
+const PizzaCard = ({ pizza }) => {
+  const { imageUrl, name, description, price, id } = pizza;
+  console.log(imageUrl, name, description, price, id);
   const [quantity, setQuantity] = useState(1);
   const [showConfirm, setShowConfirm] = useState(false);
   const addToCart = useCartStore((state) => state.addToCart);

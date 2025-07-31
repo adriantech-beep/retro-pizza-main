@@ -5,7 +5,6 @@ import { useProducts } from "./useProducts";
 const ProductListing = () => {
   const { products = [], isLoading } = useProducts();
 
-  console.log(products);
   if (isLoading) return <Loader />;
 
   if (products?.length === 0)
@@ -28,7 +27,7 @@ const ProductListing = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {products.map((pizza) => (
-            <PizzaCard key={pizza.id} {...pizza} id={pizza.id} />
+            <PizzaCard key={pizza.id} pizza={pizza} />
           ))}
         </div>
       </section>
