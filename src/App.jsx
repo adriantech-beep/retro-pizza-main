@@ -20,6 +20,7 @@ function App() {
           {/* AppLayout for inner pages */}
           <Route path="/" element={<AppLayout />}>
             <Route path="menu" element={<ProductListing />} />
+            <Route path="/menu/:id/order" element={<ProductListing />} />
             <Route path="cart" element={<CartPage />} />
             {/* Add more routes here as needed */}
           </Route>
