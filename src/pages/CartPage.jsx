@@ -13,7 +13,8 @@ const CartPage = () => {
     const token = useAuthStore.getState().token;
 
     if (!token) {
-      navigate("/login");
+      // navigate("/login");
+      navigate("/login", { state: { from: "/checkout" } });
       return;
     }
 

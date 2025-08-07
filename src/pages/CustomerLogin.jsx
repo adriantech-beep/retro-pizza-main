@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import axios from "../utils/axiosInstance"; // if you use a custom instance
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axiosInstance from "../services/axiosInstance";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,8 @@ const CustomerLogin = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from || "/cart";
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ const CustomerLogin = () => {
       localStorage.setItem("customerEmail", res.data.email);
       localStorage.setItem("customerId", res.data.customerId);
 
-      navigate("/cart"); // redirect after login
+      navigate(from);
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }
