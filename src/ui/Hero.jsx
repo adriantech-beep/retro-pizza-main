@@ -1,6 +1,6 @@
 import { Pointer, Rocket } from "lucide-react";
 import "@fontsource/audiowide";
-import "@fontsource/orbitron/700.css"; // specific weight
+import "@fontsource/orbitron/700.css";
 import "@fontsource/rajdhani/500.css";
 import "@fontsource/press-start-2p";
 
@@ -14,7 +14,6 @@ const Hero = () => {
       style={{ backgroundImage: `url(${backgroundImage})` }}
       className="bg-cover bg-center w-full h-full  inset-0 bg-[#141423] text-[#fff8e7] min-h-screen flex flex-col justify-center items-center px-4 relative"
     >
-      {/* Glowing title */}
       <h1 className="font-[Audiowide] text-4xl md:text-6xl  text-border-one">
         RETRO
       </h1>

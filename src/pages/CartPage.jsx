@@ -1,12 +1,25 @@
+import { useNavigate } from "react-router-dom";
 import { useCartStore } from "../store/useCartStore";
 import { Pencil, Trash2 } from "lucide-react";
+import { useAuthStore } from "../store/useAuthStore.js";
 const CartPage = () => {
   const cart = useCartStore((state) => state.cart);
   const deleteItem = useCartStore((state) => state.deleteItem);
-
-  console.log(cart);
+  const navigate = useNavigate();
 
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+
+  const handleCheckout = () => {
+    const token = useAuthStore.getState().token;
+
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    // Go to checkout or confirmation route
+    navigate("/checkout"); // Or "/payment", or any protected checkout page
+  };
 
   if (cart.length === 0)
     return (
@@ -59,6 +72,15 @@ const CartPage = () => {
       <div className="mt-8 border-t border-[#ff4d00]/30 pt-4 flex justify-between items-center">
         <h3 className="text-xl font-semibold text-white">Total:</h3>
         <p className="text-xl font-bold text-[#ffe600]">₱{totalPrice}</p>
+      </div>
+
+      <div className="mt-8 border-t border-[#ff4d00]/30 pt-4 flex justify-end  items-right">
+        <button
+          onClick={handleCheckout}
+          className="text-lg font-semibold text-[#ffe600]"
+        >
+          Checkout
+        </button>
       </div>
     </div>
   );

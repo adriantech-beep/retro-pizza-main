@@ -21,7 +21,7 @@ const AppLayout = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="dark" // or "light"
+        theme="dark"
         className="z-50"
       />
     </div>
