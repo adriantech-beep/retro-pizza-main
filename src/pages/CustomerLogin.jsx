@@ -1,34 +1,17 @@
 import { useState } from "react";
-// import axios from "../utils/axiosInstance"; // if you use a custom instance
-import { useLocation, useNavigate } from "react-router-dom";
-import axiosInstance from "../services/axiosInstance";
 import { Link } from "react-router-dom";
+import { useLogin } from "./useLogin";
 
 const CustomerLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from || "/cart";
+
+  const { mutate: login } = useLogin();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    try {
-      const res = await axiosInstance.post("/api/customers/log-in", {
-        email,
-        password,
-      });
-
-      localStorage.setItem("customerToken", res.data.token);
-      localStorage.setItem("customerEmail", res.data.email);
-      localStorage.setItem("customerId", res.data.customerId);
-
-      navigate(from);
-    } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
-    }
+    login({ email, password });
   };
 
   return (
@@ -38,7 +21,6 @@ const CustomerLogin = () => {
         className="bg-[#0f0f1e] border border-[#ff4d00]/30 p-6 rounded-xl shadow-lg w-full max-w-md"
       >
         <h2 className="text-xl font-bold">Customer Login</h2>
-        {error && <p className="text-red-500">{error}</p>}
         <div className="mb-4">
           <label>Please Enter Your Email Address</label>
           <input

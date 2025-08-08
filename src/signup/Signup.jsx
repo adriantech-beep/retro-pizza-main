@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useAuthStore } from "../store/useAuthStore.js";
+import { useSignup } from "./useSignup.js";
 
 const Signup = () => {
-  const { signup } = useAuthStore();
-  const navigate = useNavigate();
+  const { mutate: signup } = useSignup();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,14 +23,7 @@ const Signup = () => {
       return;
     }
 
-    try {
-      await signup({ email, password, confirmPassword });
-      toast.success("Signup successful!");
-      navigate("/cart");
-    } catch (err) {
-      const message = err.response?.data?.message || "Signup failed.";
-      toast.error(message);
-    }
+    signup({ email, password, confirmPassword });
   };
 
   return (
