@@ -18,8 +18,7 @@ const CartPage = () => {
       return;
     }
 
-    // Go to checkout or confirmation route
-    navigate("/checkout"); // Or "/payment", or any protected checkout page
+    navigate("/checkout");
   };
 
   if (cart.length === 0)

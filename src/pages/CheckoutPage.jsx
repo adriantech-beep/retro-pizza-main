@@ -3,6 +3,8 @@ import { useCartStore } from "../store/useCartStore.js";
 
 const CheckoutPage = () => {
   const cart = useCartStore((state) => state.cart);
+  const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+  console.log(cart, totalPrice);
 
   return (
     <div className="min-h-screen bg-[#1a1a2e] flex items-center justify-center  px-4 py-12 text-[#fff8e7]">
@@ -33,6 +35,10 @@ const CheckoutPage = () => {
                 </span>
               </li>
             ))}
+            <li className="flex justify-between">
+              <p>Total Price</p>
+              <span className="text-lg text-[#ff4d00]">₱{totalPrice}</span>
+            </li>
           </ul>
         </div>
 
