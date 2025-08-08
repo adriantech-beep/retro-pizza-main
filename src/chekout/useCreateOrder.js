@@ -2,13 +2,14 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { createOrder } from "../services/apiOrders";
 
-export const useCreateOrder = () => {
+export const useCreateOrder = (onSuccessCallback) => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: createOrder,
     onSuccess: () => {
       toast.success("Order created");
       queryClient.invalidateQueries(["orders"]);
+      if (onSuccessCallback) onSuccessCallback();
     },
     onError: (err) => {
       if (err.response?.status === 422) {

@@ -9,8 +9,12 @@ import SuccessModal from "../ui/SuccessModal";
 const CheckoutForm = ({ cart }) => {
   const clearCart = useCartStore((state) => state.clearCart);
   const navigate = useNavigate();
-  const { mutate: createOrder, isLoading } = useCreateOrder();
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+
+  const { mutate: createOrder, isLoading } = useCreateOrder(() => {
+    setShowSuccessModal(true);
+    clearCart();
+  });
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -42,10 +46,8 @@ const CheckoutForm = ({ cart }) => {
     };
 
     createOrder(orderData);
-    setShowSuccessModal(true);
-
-    clearCart();
   };
+
   const handleCloseModal = useCallback(() => {
     setShowSuccessModal(false);
     navigate("/menu");
