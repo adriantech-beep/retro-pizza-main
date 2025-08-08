@@ -14,7 +14,7 @@ const SuccessModal = ({ onCloseModal }) => {
           onClick={onCloseModal}
           className="mt-4 px-6 py-2 text-[#ff4d00] rounded-md hover:bg[#ff4d00] transition"
         >
-          Continue Shopping
+          Continue Ordering
         </button>
       </div>
     </div>
