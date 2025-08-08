@@ -25,9 +25,10 @@ export const useAuthStore = create(
         localStorage.setItem("customerToken", token);
       },
 
-      // logout: () => {
-      //   set({ user: null, token: null });
-      // },
+      logout: () => {
+        set({ user: null, token: null });
+        localStorage.removeItem("customerToken");
+      },
     }),
     {
       name: "auth-storage",

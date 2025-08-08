@@ -26,7 +26,7 @@ const ProductListing = () => {
 
   return (
     <ModalWindow>
-      <section className="h-full bg-[#1a1a2e] py-20 px-6 text-[#fff8e7]">
+      <section className="min-h-screen h-full bg-[#1a1a2e] py-20 px-6 text-[#fff8e7]">
         <div className="max-w-6xl mx-auto text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-[Orbitron] text-[#ff4d00] drop-shadow-[0_0_10px_#ff4d00]">
             Select Your Pizza
